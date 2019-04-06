@@ -6,8 +6,8 @@ public class PlayerShoot : MonoBehaviour
 
     private float fireRate = 0.5f;
     private float nextFireTime;
-
     private float fireRange = 5.0f;
+    private int weaponDamage = 1;
 
 	void Update ()
     {
@@ -36,11 +36,11 @@ public class PlayerShoot : MonoBehaviour
         RaycastHit hitInfo;
         if (Physics.Raycast(ray, out hitInfo, fireRange))
         {
-            Debug.Log("You hit " + hitInfo.transform.name);
-        }
-        else
-        {
-            Debug.Log("You missed!");
+            var damageable = hitInfo.collider.GetComponent<TakeDamage>();
+            if (damageable != null)
+            {
+                damageable.Damage(weaponDamage);
+            }
         }
     }
 }
