@@ -21,6 +21,8 @@ public class EnemySpawner : MonoBehaviour
         spawnPoints = transform
             .Cast<Transform>()
             .ToArray();
+
+        spawnRate *= 10000;
     }
 
     void Update()
@@ -40,6 +42,8 @@ public class EnemySpawner : MonoBehaviour
         var spawnPoint = spawnPoints[index].transform;
 
         // Spawn an enemy and group in enemy container
-        Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation, enemiesContainer);
+        var newEnemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation, enemiesContainer);
+        var movementNode = spawnPoint.GetComponent<MovementNode>().PickRandomNextNode();
+        newEnemy.GetComponent<EnemyMovement>().SetMovementNode(movementNode);
     }
 }
