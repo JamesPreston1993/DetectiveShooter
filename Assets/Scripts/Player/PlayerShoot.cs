@@ -2,10 +2,12 @@
 
 public class PlayerShoot : MonoBehaviour
 {
+    public Camera playerCamera;
+
     private float fireRate = 0.5f;
     private float nextFireTime;
 
-    private int shotsFired;
+    private float fireRange = 5.0f;
 
 	void Update ()
     {
@@ -18,7 +20,27 @@ public class PlayerShoot : MonoBehaviour
         if (isPlayerShooting && canShoot)
         {
             nextFireTime = Time.time + fireRate;
-            Debug.Log("Bang! Shots fired: " + ++shotsFired);
+
+            FireWeapon();
+        }
+    }
+
+    private void FireWeapon()
+    {
+        var ray = new Ray
+        {
+            origin = playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0)),
+            direction = playerCamera.transform.forward
+        };
+
+        RaycastHit hitInfo;
+        if (Physics.Raycast(ray, out hitInfo, fireRange))
+        {
+            Debug.Log("You hit " + hitInfo.transform.name);
+        }
+        else
+        {
+            Debug.Log("You missed!");
         }
     }
 }
