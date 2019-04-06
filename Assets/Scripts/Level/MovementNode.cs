@@ -15,7 +15,9 @@ public class MovementNode : MonoBehaviour
     void Start()
     {
         var lineRenderer = gameObject.AddComponent<LineRenderer>();
-        Debug.Log(lineRenderer);
+        lineRenderer.startColor = lineRenderer.endColor = Color.magenta;
+        lineRenderer.startWidth = lineRenderer.endWidth = 0.1f;
+
         foreach (var node in nextNodes)
         {
             var direction = node.transform.position - transform.position;
@@ -23,8 +25,6 @@ public class MovementNode : MonoBehaviour
                 transform.position,
                 node.transform.position
             });
-            lineRenderer.startColor = lineRenderer.endColor = Color.magenta;
-            lineRenderer.startWidth =  lineRenderer.endWidth = 0.1f;
         }
     }
 

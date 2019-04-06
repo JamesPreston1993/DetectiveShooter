@@ -1407,7 +1407,7 @@ Prefab:
     - target: {fileID: 114119118175242296, guid: 6a2c0d048b2884ace8d19830d0d87532,
         type: 2}
       propertyPath: nextNodes.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4237298181519946, guid: 6a2c0d048b2884ace8d19830d0d87532, type: 2}
       propertyPath: m_LocalPosition.x
@@ -1449,12 +1449,12 @@ Prefab:
         type: 2}
       propertyPath: nextNodes.Array.data[0]
       value: 
-      objectReference: {fileID: 1781116127}
+      objectReference: {fileID: 1354401821}
     - target: {fileID: 114119118175242296, guid: 6a2c0d048b2884ace8d19830d0d87532,
         type: 2}
       propertyPath: nextNodes.Array.data[1]
       value: 
-      objectReference: {fileID: 1354401821}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a2c0d048b2884ace8d19830d0d87532, type: 2}
   m_IsPrefabAsset: 0

@@ -21,8 +21,6 @@ public class EnemySpawner : MonoBehaviour
         spawnPoints = transform
             .Cast<Transform>()
             .ToArray();
-
-        spawnRate *= 10000;
     }
 
     void Update()
