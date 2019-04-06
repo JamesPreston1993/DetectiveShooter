@@ -4,6 +4,8 @@ public class PlayerLook : MonoBehaviour
 {
     public Transform playerCamera;
 
+    private float xAxisCap = 45.0f;
+
     void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -36,7 +38,13 @@ public class PlayerLook : MonoBehaviour
         var cameraRotation = playerCamera.transform.rotation.eulerAngles;
 
         // Since we have rotated the player container, only need to rotate X axis
-        cameraRotation.x -= movement;
+        var xAxis = cameraRotation.x - movement;
+
+        // Cap camera movement on x axis
+        if (xAxis > xAxisCap && xAxis < 360.0f - xAxisCap)
+            return;
+
+        cameraRotation.x = xAxis;
 
         playerCamera.transform.rotation = Quaternion.Euler(cameraRotation);
     }
