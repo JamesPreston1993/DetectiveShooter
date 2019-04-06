@@ -308,7 +308,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &267454296
 GameObject:
@@ -339,7 +339,7 @@ Transform:
   - {fileID: 1474896737}
   - {fileID: 1370935195}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &585676030
 GameObject:
@@ -367,7 +367,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &636949253
 GameObject:
@@ -634,7 +634,7 @@ RectTransform:
   m_Children:
   - {fileID: 1965917132}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -653,7 +653,7 @@ GameObject:
   - component: {fileID: 992237755}
   - component: {fileID: 992237754}
   m_Layer: 0
-  m_Name: Target
+  m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -720,11 +720,40 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 992237753}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 11, y: 2, z: 3}
+  m_LocalScale: {x: 10, y: 4, z: 1}
   m_Children: []
+  m_Father: {fileID: 1051980991}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1051980990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1051980991}
+  m_Layer: 0
+  m_Name: Level Geometry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1051980991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1051980990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 992237757}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1162783808
 GameObject:
@@ -755,7 +784,7 @@ Transform:
   - {fileID: 680169867}
   - {fileID: 1779984560}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1162783810
 MonoBehaviour:
@@ -891,7 +920,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1112754328401378, guid: fabe66fe27bfe4862a5d80bad857eb71, type: 2}
       propertyPath: m_Name
-      value: Movement Node
+      value: Movement Node 3
       objectReference: {fileID: 0}
     - target: {fileID: 114398117386207164, guid: fabe66fe27bfe4862a5d80bad857eb71,
         type: 2}
@@ -1041,7 +1070,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1112754328401378, guid: fabe66fe27bfe4862a5d80bad857eb71, type: 2}
       propertyPath: m_Name
-      value: Movement Node
+      value: Movement Node 2
       objectReference: {fileID: 0}
     - target: {fileID: 114398117386207164, guid: fabe66fe27bfe4862a5d80bad857eb71,
         type: 2}
@@ -1187,6 +1216,10 @@ Prefab:
       propertyPath: nextNodes.Array.data[0]
       value: 
       objectReference: {fileID: 2032556646}
+    - target: {fileID: 1958736012644206, guid: 6a2c0d048b2884ace8d19830d0d87532, type: 2}
+      propertyPath: m_Name
+      value: Spawn Point 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a2c0d048b2884ace8d19830d0d87532, type: 2}
   m_IsPrefabAsset: 0
@@ -1236,7 +1269,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1958736012644206, guid: 6a2c0d048b2884ace8d19830d0d87532, type: 2}
       propertyPath: m_Name
-      value: Spawn Point
+      value: Spawn Point 2
       objectReference: {fileID: 0}
     - target: {fileID: 114119118175242296, guid: 6a2c0d048b2884ace8d19830d0d87532,
         type: 2}
@@ -1345,6 +1378,10 @@ Prefab:
       propertyPath: nextNodes.Array.data[0]
       value: 
       objectReference: {fileID: 1781116127}
+    - target: {fileID: 1112754328401378, guid: fabe66fe27bfe4862a5d80bad857eb71, type: 2}
+      propertyPath: m_Name
+      value: Movement Node 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fabe66fe27bfe4862a5d80bad857eb71, type: 2}
   m_IsPrefabAsset: 0
