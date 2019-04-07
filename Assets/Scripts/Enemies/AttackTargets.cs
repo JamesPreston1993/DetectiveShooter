@@ -3,6 +3,8 @@ using System.Collections;
 
 public class AttackTargets : MonoBehaviour
 {
+    public Transform playerTransform;
+
     private float fireRate = 0.5f;
     private float nextFireTime;
     private float fireRange = 5.0f;
@@ -17,6 +19,13 @@ public class AttackTargets : MonoBehaviour
 
     void Update()
     {
+        // Rotate towards player
+        if (playerTransform != null)
+        {
+            var rotation = Quaternion.RotateTowards(transform.rotation, playerTransform.rotation, 10.0f * Time.deltaTime);
+            transform.rotation = rotation;
+        }
+
         // Check if enemy can shoot
         var canShoot = Time.time > nextFireTime;
 
