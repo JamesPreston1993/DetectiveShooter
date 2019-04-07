@@ -6,6 +6,7 @@ public class TakeDamage : MonoBehaviour
 
     public void Damage(int damage)
     {
+        Debug.Log(name + " was damaged!");
         maxHealth -= damage;
         if (maxHealth <= 0)
         {
