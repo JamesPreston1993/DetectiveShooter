@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114365259350124362}
   - component: {fileID: 114230885669486624}
   - component: {fileID: 82574577112791236}
+  - component: {fileID: 114771568393155408}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -99,7 +100,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f90603bc12bb44d37b7eee24e42de383, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -107,9 +108,9 @@ AudioSource:
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
-  DopplerLevel: 1
+  DopplerLevel: 1.2
   MinDistance: 1
-  MaxDistance: 10
+  MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -208,6 +209,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   gravity: 20
+--- !u!114 &114771568393155408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1777826432427024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8cca20682143467b9a315c5d483e9e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114893259417479722
 MonoBehaviour:
   m_ObjectHideFlags: 1
