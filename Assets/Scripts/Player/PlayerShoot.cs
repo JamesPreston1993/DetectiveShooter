@@ -9,7 +9,14 @@ public class PlayerShoot : MonoBehaviour
     private float fireRange = 5.0f;
     private int weaponDamage = 1;
 
-	void Update ()
+    private AudioSource fireSound;
+
+    void Start()
+    {
+        fireSound = GetComponent<AudioSource>();
+    }
+
+    void Update ()
     {
         // Check if player is shooting
         var isPlayerShooting = Input.GetButton("Fire1");
@@ -27,6 +34,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void FireWeapon()
     {
+        fireSound.Play();
         var ray = new Ray
         {
             origin = playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0)),

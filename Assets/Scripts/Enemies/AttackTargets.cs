@@ -3,12 +3,17 @@ using System.Collections;
 
 public class AttackTargets : MonoBehaviour
 {
-    public Transform playerTransform;
-
     private float fireRate = 0.5f;
     private float nextFireTime;
     private float fireRange = 5.0f;
     private int weaponDamage = 1;
+
+    private AudioSource fireSound;
+
+    void Start()
+    {
+        fireSound = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -25,6 +30,7 @@ public class AttackTargets : MonoBehaviour
 
     private void FireWeapon()
     {
+        fireSound.Play();
         var ray = new Ray
         {
             origin = transform.position,
