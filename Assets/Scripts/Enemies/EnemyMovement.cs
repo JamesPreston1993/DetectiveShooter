@@ -12,6 +12,8 @@ public class EnemyMovement : MonoBehaviour
     private Transform movementTransform;
     private float distanceTolerance = 0.125f;
 
+    private bool isEnemyInTheWay;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -30,6 +32,9 @@ public class EnemyMovement : MonoBehaviour
         {
             // Calculate movement
             moveDirection = Vector3.forward;
+            if (isEnemyInTheWay)
+                moveDirection += Vector3.right;
+
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection = moveDirection * speed;
 
@@ -44,6 +49,22 @@ public class EnemyMovement : MonoBehaviour
 
         // Move the controller
         controller.Move(moveDirection * Time.deltaTime);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy" && other.name != name)
+        {
+            isEnemyInTheWay = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Enemy" && other.name != name)
+        {
+            isEnemyInTheWay = false;
+        }
     }
 
     public void SetMovementNode(GameObject node)

@@ -11,6 +11,7 @@ public class EnemySpawner : MonoBehaviour
 
     private float spawnRate = 5.0f;
     private float nextSpawnTime;
+    private int enemiesSpawned;
 
     private Random randomNumberGenerator;
 
@@ -43,5 +44,7 @@ public class EnemySpawner : MonoBehaviour
         var newEnemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation, enemiesContainer);
         var movementNode = spawnPoint.GetComponent<MovementNode>().PickRandomNextNode();
         newEnemy.GetComponent<EnemyMovement>().SetMovementNode(movementNode);
+
+        newEnemy.name = "Enemy " + ++enemiesSpawned;
     }
 }
