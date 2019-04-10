@@ -31,7 +31,7 @@ public class EnemyStateManager : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.name == "Player Proximity")
         {
             SetAttackState(other.transform);
         }
@@ -39,7 +39,7 @@ public class EnemyStateManager : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.name == "Player Proximity")
         {
             SetMoveState();
         }
