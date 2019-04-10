@@ -10,16 +10,11 @@ public class AttackTargets : MonoBehaviour
     private float fireRange = 5.0f;
     private int weaponDamage = 1;
 
-    private LineRenderer lineRenderer;
-    private WaitForSeconds fireDuration;
     private AudioSource fireSound;
 
     void Start()
     {
         fireSound = GetComponent<AudioSource>();
-        fireDuration = new WaitForSeconds(0.75f);
-        lineRenderer = GetComponent<LineRenderer>();
-        lineRenderer.enabled = false;
     }
 
     void Update()
@@ -51,10 +46,8 @@ public class AttackTargets : MonoBehaviour
         };
 
         RaycastHit hitInfo;
-        Vector3 endpoint = transform.position + (transform.forward * fireRange);
         if (Physics.Raycast(ray, out hitInfo, fireRange))
         {
-            endpoint = hitInfo.point;
             var damageable = hitInfo.collider.GetComponent<TakeDamage>();
             if (damageable != null)
             {
@@ -62,20 +55,11 @@ public class AttackTargets : MonoBehaviour
             }
         }
 
-        StartCoroutine(FireEffect(endpoint));
+       FireEffect();
     }
 
-    private IEnumerator FireEffect(Vector3 endpoint)
+    private void FireEffect()
     {
         fireSound.Play();
-
-        lineRenderer.SetPosition(0, transform.position);
-        lineRenderer.SetPosition(1, endpoint);
-
-        lineRenderer.enabled = true;
-
-        yield return fireDuration;
-
-        lineRenderer.enabled = false;
     }
 }
