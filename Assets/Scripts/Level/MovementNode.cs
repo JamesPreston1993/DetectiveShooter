@@ -12,6 +12,14 @@ public class MovementNode : MonoBehaviour
         randomNumberGenerator = new Random();
     }
 
+    void Update()
+    {
+        foreach (var node in nextNodes)
+        {
+            Debug.DrawLine(transform.position, node.transform.position, Color.magenta);
+        }
+    }
+
     public GameObject PickRandomNextNode()
     {
         var index = randomNumberGenerator.Next(nextNodes.Length);
