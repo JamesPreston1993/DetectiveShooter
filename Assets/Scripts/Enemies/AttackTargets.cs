@@ -3,6 +3,8 @@ using System.Collections;
 
 public class AttackTargets : MonoBehaviour
 {
+    private float speed = 6.0f;
+
     public Transform playerTransform;
 
     private float fireRate = 0.5f;
@@ -22,7 +24,10 @@ public class AttackTargets : MonoBehaviour
         // Rotate towards player
         if (playerTransform != null)
         {
-            var rotation = Quaternion.LookRotation(playerTransform.position - transform.position);
+            var turnDirection = Vector3.RotateTowards(transform.forward,
+                playerTransform.position - transform.position,
+                speed * Time.deltaTime, 0.0f);
+            var rotation = Quaternion.LookRotation(turnDirection);
             transform.rotation = rotation;
         }
 

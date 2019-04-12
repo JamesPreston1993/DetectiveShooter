@@ -39,7 +39,12 @@ public class EnemyMovement : MonoBehaviour
             moveDirection = moveDirection * speed;
 
             // Calculate direction
-            var rotation = Quaternion.LookRotation(movementTransform.position - transform.position);
+            var turnDirection = Vector3.RotateTowards(transform.forward,
+                movementTransform.position - transform.position,
+                speed * Time.deltaTime, 0.0f);
+
+            var rotation = Quaternion.LookRotation(turnDirection);
+
             rotation.x = rotation.z = 0;
             transform.rotation = rotation;
         }
