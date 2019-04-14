@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -10,10 +11,12 @@ public class PlayerShoot : MonoBehaviour
     private int weaponDamage = 1;
 
     private AudioSource fireSound;
+    private Animator animator;
 
     void Start()
     {
         fireSound = GetComponent<AudioSource>();
+        animator = GetComponent<Animator>();
     }
 
     void Update ()
@@ -34,7 +37,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void FireWeapon()
     {
-        fireSound.Play();
+        StartCoroutine(FireEffect());
         var ray = new Ray
         {
             origin = playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0)),
@@ -50,5 +53,15 @@ public class PlayerShoot : MonoBehaviour
                 damageable.Damage(weaponDamage);
             }
         }
+    }
+
+    private IEnumerator FireEffect()
+    {
+        fireSound.Play();
+        animator.SetBool("IsShooting", true);
+
+        yield return new WaitForSeconds(fireRate);
+
+        animator.SetBool("IsShooting", false);
     }
 }
