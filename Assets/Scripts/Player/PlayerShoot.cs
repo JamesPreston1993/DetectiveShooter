@@ -37,7 +37,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void FireWeapon()
     {
-        StartCoroutine(FireEffect());
+        FireEffect();
         var ray = new Ray
         {
             origin = playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0)),
@@ -55,13 +55,10 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    private IEnumerator FireEffect()
+    private void FireEffect()
     {
         fireSound.Play();
         animator.SetBool("IsShooting", true);
-
-        yield return new WaitForSeconds(fireRate);
-
         animator.SetBool("IsShooting", false);
     }
 }
