@@ -9,7 +9,7 @@ public class AttackTargets : MonoBehaviour
 
     private float fireRate = 0.5f;
     private float nextFireTime;
-    private float fireRange = 5.0f;
+    private float fireRange = 10.0f;
     private int weaponDamage = 1;
 
     private AudioSource fireSound;
@@ -44,6 +44,8 @@ public class AttackTargets : MonoBehaviour
 
     private void FireWeapon()
     {
+        FireEffect();
+
         var ray = new Ray
         {
             origin = transform.position,
@@ -57,10 +59,15 @@ public class AttackTargets : MonoBehaviour
             if (damageable != null)
             {
                 damageable.Damage(weaponDamage);
+                return;
+            }
+
+            var playerHealth = hitInfo.collider.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(weaponDamage);
             }
         }
-
-       FireEffect();
     }
 
     private void FireEffect()

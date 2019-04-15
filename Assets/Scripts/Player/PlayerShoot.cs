@@ -7,7 +7,7 @@ public class PlayerShoot : MonoBehaviour
 
     private float fireRate = 0.5f;
     private float nextFireTime;
-    private float fireRange = 5.0f;
+    private float fireRange = 10.0f;
     private int weaponDamage = 1;
 
     private AudioSource fireSound;
