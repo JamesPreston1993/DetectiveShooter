@@ -493,6 +493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e9c8bcac5c240168de59cbf8ecc945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodEffect: {fileID: 1226066152570816, guid: b82679a6d573e4a54ace529d5949cab2,
+    type: 2}
+  deathSound: {fileID: 8300000, guid: 6b7df1579fd774ac0bbae146a4edd559, type: 3}
 --- !u!143 &143225611724555172
 CharacterController:
   m_ObjectHideFlags: 1
