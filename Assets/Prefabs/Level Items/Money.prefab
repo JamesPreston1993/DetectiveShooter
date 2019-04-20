@@ -51,9 +51,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4403415173835032}
+  - component: {fileID: 135495767744957752}
   m_Layer: 0
   m_Name: Money
-  m_TagString: Untagged
+  m_TagString: Money
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,3 +142,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1817593008814998}
   m_Mesh: {fileID: 4300000, guid: 705671ac3b8cb4909981832ad728e471, type: 3}
+--- !u!135 &135495767744957752
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1869696664514602}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.2
+  m_Center: {x: -0.375, y: 0, z: -0.18}

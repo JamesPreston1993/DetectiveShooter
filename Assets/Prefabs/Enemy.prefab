@@ -495,6 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloodEffect: {fileID: 1226066152570816, guid: b82679a6d573e4a54ace529d5949cab2,
     type: 2}
+  money: {fileID: 1869696664514602, guid: 7a33430359898499eab897c266da1fca, type: 2}
   deathSound: {fileID: 8300000, guid: 6b7df1579fd774ac0bbae146a4edd559, type: 3}
 --- !u!143 &143225611724555172
 CharacterController:

@@ -5,6 +5,7 @@ public class TakeDamage : MonoBehaviour
     private int maxHealth = 3;
 
     public GameObject bloodEffect;
+    public GameObject money;
     public AudioClip deathSound;
 
     private AudioSource audioSource;
@@ -38,5 +39,10 @@ public class TakeDamage : MonoBehaviour
         audioSource.clip = deathSound;
         audioSource.Play();
         Instantiate(bloodEffect, transform);
+        Instantiate(money, new Vector3
+        {
+            x = transform.position.x,
+            z = transform.position.z
+        }, transform.rotation);
     }
 }
