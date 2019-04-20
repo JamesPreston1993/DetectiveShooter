@@ -1,14 +1,20 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
     public Camera playerCamera;
+    public TextMeshProUGUI ammoUi;
 
     private float fireRate = 0.5f;
     private float nextFireTime;
     private float fireRange = 10.0f;
     private int weaponDamage = 1;
+
+    private int clipSize = 6;
+    private int clipAmmo = 6;
+    private int totalAmmo = 40;
 
     private AudioSource fireSound;
     private Animator animator;
@@ -33,10 +39,16 @@ public class PlayerShoot : MonoBehaviour
 
             FireWeapon();
         }
+
+        ammoUi.SetText("{0} / {1} iii", clipAmmo, totalAmmo - clipAmmo);
     }
 
     private void FireWeapon()
     {
+        totalAmmo--;
+        clipAmmo--;
+
+
         StartCoroutine(FireEffect());
         var ray = new Ray
         {
