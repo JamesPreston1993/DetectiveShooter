@@ -14,7 +14,7 @@ public class PlayerShoot : MonoBehaviour
 
     private int clipSize = 6;
     private int clipAmmo = 6;
-    private int totalAmmo = 40;
+    private int totalAmmo = 36;
     private float reloadTime = 2.0f;
 
     private AudioSource fireSound;
@@ -41,11 +41,14 @@ public class PlayerShoot : MonoBehaviour
             FireWeapon();
         }
 
-        ammoUi.SetText("{0} / {1} iii", clipAmmo, totalAmmo - clipAmmo);
+        ammoUi.SetText("{0} / {1} iii", clipAmmo, totalAmmo - clipAmmo > 0 ? totalAmmo - clipAmmo : 0);
     }
 
     private void FireWeapon()
     {
+        if (totalAmmo == 0)
+            return;
+
         totalAmmo--;
         clipAmmo--;
 
@@ -69,8 +72,16 @@ public class PlayerShoot : MonoBehaviour
         if (clipAmmo == 0)
         {
             nextFireTime = Time.time + reloadTime;
-            clipAmmo = clipSize;
-            animator.SetBool("IsReloading", true);
+            if (totalAmmo >= clipSize)
+            {
+                clipAmmo = clipSize;
+                animator.SetBool("IsReloading", true);
+            }
+            else if (totalAmmo > 0)
+            {
+                clipAmmo = totalAmmo;
+                animator.SetBool("IsReloading", true);
+            }
         }
     }
 
