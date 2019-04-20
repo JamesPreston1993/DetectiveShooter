@@ -15,6 +15,7 @@ public class PlayerShoot : MonoBehaviour
     private int clipSize = 6;
     private int clipAmmo = 6;
     private int totalAmmo = 40;
+    private float reloadTime = 2.0f;
 
     private AudioSource fireSound;
     private Animator animator;
@@ -47,7 +48,11 @@ public class PlayerShoot : MonoBehaviour
     {
         totalAmmo--;
         clipAmmo--;
-
+        if (clipAmmo == 0)
+        {
+            nextFireTime = Time.time + reloadTime;
+            clipAmmo = clipSize;
+        }
 
         StartCoroutine(FireEffect());
         var ray = new Ray
