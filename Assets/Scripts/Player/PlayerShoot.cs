@@ -90,4 +90,9 @@ public class PlayerShoot : MonoBehaviour
         fireSound.Play();
         animator.SetBool("IsShooting", true);
     }
+
+    public void AddAmmo(int ammoAmount)
+    {
+        totalAmmo += ammoAmount;
+    }
 }

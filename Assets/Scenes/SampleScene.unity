@@ -5969,6 +5969,65 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4237298181519946, guid: 6a2c0d048b2884ace8d19830d0d87532,
     type: 2}
   m_PrefabInternal: {fileID: 1779984559}
+--- !u!1001 &1791852481
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4104058508461036, guid: 5c279d25974e24c328262b7e2125b425, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104058508461036, guid: 5c279d25974e24c328262b7e2125b425, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104058508461036, guid: 5c279d25974e24c328262b7e2125b425, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -2.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104058508461036, guid: 5c279d25974e24c328262b7e2125b425, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104058508461036, guid: 5c279d25974e24c328262b7e2125b425, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104058508461036, guid: 5c279d25974e24c328262b7e2125b425, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104058508461036, guid: 5c279d25974e24c328262b7e2125b425, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4104058508461036, guid: 5c279d25974e24c328262b7e2125b425, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5c279d25974e24c328262b7e2125b425, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!1 &1791852482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1239186685042286, guid: 5c279d25974e24c328262b7e2125b425,
+    type: 2}
+  m_PrefabInternal: {fileID: 1791852481}
+--- !u!135 &1791852483
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1791852482}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1808072493 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1112754328401378, guid: fabe66fe27bfe4862a5d80bad857eb71,
