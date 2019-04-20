@@ -48,13 +48,8 @@ public class PlayerShoot : MonoBehaviour
     {
         totalAmmo--;
         clipAmmo--;
-        if (clipAmmo == 0)
-        {
-            nextFireTime = Time.time + reloadTime;
-            clipAmmo = clipSize;
-        }
 
-        StartCoroutine(FireEffect());
+        FireEffect();
         var ray = new Ray
         {
             origin = playerCamera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0)),
@@ -70,15 +65,18 @@ public class PlayerShoot : MonoBehaviour
                 damageable.Damage(weaponDamage);
             }
         }
+
+        if (clipAmmo == 0)
+        {
+            nextFireTime = Time.time + reloadTime;
+            clipAmmo = clipSize;
+            animator.SetBool("IsReloading", true);
+        }
     }
 
-    private IEnumerator FireEffect()
+    private void FireEffect()
     {
         fireSound.Play();
         animator.SetBool("IsShooting", true);
-
-        yield return new WaitForSeconds(0);
-
-        animator.SetBool("IsShooting", false);
     }
 }
