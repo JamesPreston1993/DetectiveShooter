@@ -52,6 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4403415173835032}
   - component: {fileID: 135495767744957752}
+  - component: {fileID: 114085342738698924}
   m_Layer: 0
   m_Name: Money
   m_TagString: Money
@@ -142,6 +143,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1817593008814998}
   m_Mesh: {fileID: 4300000, guid: 705671ac3b8cb4909981832ad728e471, type: 3}
+--- !u!114 &114085342738698924
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1869696664514602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8920dfae87d0349a3b3d7cad6cc4be4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyAfterTime: 3
 --- !u!135 &135495767744957752
 SphereCollider:
   m_ObjectHideFlags: 1
