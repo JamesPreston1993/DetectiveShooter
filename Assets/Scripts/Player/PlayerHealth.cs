@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health = 100;
+    public int health;
     public TextMeshProUGUI healthUi;
     public Image damageIndicator;
 
@@ -30,6 +30,11 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         DamageEffect();
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene("DeathScreen");
+        }
     }
 
     private void DamageEffect()

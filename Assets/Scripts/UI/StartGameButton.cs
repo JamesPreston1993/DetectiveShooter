@@ -10,6 +10,7 @@ public class StartGameButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     void Awake()
     {
+        Cursor.lockState = CursorLockMode.None;
         buttonText = GetComponentInChildren<TextMeshProUGUI>();
         initaltextValue = buttonText.text;
         buttonText.SetText(initaltextValue + "?");
