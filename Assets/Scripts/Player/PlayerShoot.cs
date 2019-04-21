@@ -10,7 +10,7 @@ public class PlayerShoot : MonoBehaviour
     private float fireRate = 0.5f;
     private float nextFireTime;
     private float fireRange = 10.0f;
-    private int weaponDamage = 1;
+    private int weaponDamage = 5;
 
     private int clipSize = 6;
     private int clipAmmo = 6;

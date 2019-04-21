@@ -10,7 +10,7 @@ public class AttackTargets : MonoBehaviour
     private float fireRate = 0.5f;
     private float nextFireTime;
     private float fireRange = 10.0f;
-    private int weaponDamage = 1;
+    private int weaponDamage = 3;
 
     private AudioSource fireSound;
 

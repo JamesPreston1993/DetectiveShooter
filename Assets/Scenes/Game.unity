@@ -5046,6 +5046,11 @@ Prefab:
       propertyPath: ammoUi
       value: 
       objectReference: {fileID: 1113740016}
+    - target: {fileID: 114682991863580258, guid: 78991d28aa66e4ee6b7732b7719af573,
+        type: 2}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78991d28aa66e4ee6b7732b7719af573, type: 2}
   m_IsPrefabAsset: 0

@@ -2,7 +2,7 @@
 
 public class TakeDamage : MonoBehaviour
 {
-    private int maxHealth = 3;
+    private int maxHealth = 10;
 
     public GameObject bloodEffect;
     public GameObject money;

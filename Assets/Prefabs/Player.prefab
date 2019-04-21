@@ -434,6 +434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 20775177353138596}
+  ammoUi: {fileID: 0}
 --- !u!114 &114682991863580258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -445,9 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b147dc5781f42a39b6869215e5cdf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  jumpSpeed: 8
-  gravity: 20
+  speed: 8
 --- !u!114 &114814854096122410
 MonoBehaviour:
   m_ObjectHideFlags: 1
