@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class StartGameButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     private TextMeshProUGUI buttonText;
+    private string initaltextValue;
 
     void Awake()
     {
         buttonText = GetComponentInChildren<TextMeshProUGUI>();
-        buttonText.SetText("Ready?");
+        initaltextValue = buttonText.text;
+        buttonText.SetText(initaltextValue + "?");
     }
 
     public void OnClick()
@@ -20,11 +22,11 @@ public class StartGameButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        buttonText.SetText("Ready!");
+        buttonText.SetText(initaltextValue + "!");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        buttonText.SetText("Ready?");
+        buttonText.SetText(initaltextValue + "?");
     }
 }
