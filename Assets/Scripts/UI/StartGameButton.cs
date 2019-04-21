@@ -1,6 +1,7 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class StartGameButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -14,7 +15,7 @@ public class StartGameButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
     public void OnClick()
     {
-        Debug.Log("Clicked");
+        SceneManager.LoadScene("Game");
     }
 
     public void OnPointerEnter(PointerEventData eventData)
